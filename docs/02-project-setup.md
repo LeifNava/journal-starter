@@ -18,29 +18,29 @@ request.
 
 3. On your host machine, clone your fork, replacing `YOUR_USERNAME` with your GitHub username:
 
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/journal-starter.git
-   ```
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/journal-starter.git
+    ```
 
 4. Change into the project directory:
 
-   ```bash
-   cd journal-starter
-   ```
+    ```bash
+    cd journal-starter
+    ```
 
 5. Verify that your fork is the `origin` remote:
 
-   ```bash
-   git remote -v
-   ```
+    ```bash
+    git remote -v
+    ```
 
-   `origin` should point to `YOUR_USERNAME/journal-starter`.
+    `origin` should point to `YOUR_USERNAME/journal-starter`.
 
 6. Open your cloned fork in VS Code:
 
-   ```bash
-   code .
-   ```
+    ```bash
+    code .
+    ```
 
 ## 2. Create the Environment File
 
@@ -49,30 +49,30 @@ request.
 
 2. Make sure you are in the project root:
 
-   ```bash
-   pwd
-   ```
+    ```bash
+    pwd
+    ```
 
-   It should print the path to the `journal-starter` directory on your host machine.
+    It should print the path to the `journal-starter` directory on your host machine.
 
 3. The sample environment file contains secret values for local development.
    Copy the sample environment file to `.env`:
 
-   ```bash
-   cp .env-sample .env
-   ```
+    ```bash
+    cp .env-sample .env
+    ```
 
 4. Do not make any changes to the `.env` file yet.
 
 5. An important security note: the `.env` file is ignored by Git. Confirm this by running:
 
-   ```bash
-   git check-ignore .env
-   ```
+    ```bash
+    git check-ignore .env
+    ```
 
-   The terminal should print `.env`, which means it is ignored by Git. You can also
-   confirm this by opening the `.gitignore` file and searching for `.env` with
-   `Cmd/Ctrl + F`. You should see it listed there. Do not change this.
+    The terminal should print `.env`, which means it is ignored by Git. You can also
+    confirm this by opening the `.gitignore` file and searching for `.env` with
+    `Cmd/Ctrl + F`. You should see it listed there. Do not change this.
 
 ## 3. Open the Development Container
 
@@ -88,11 +88,11 @@ This project uses development containers (Dev Containers), which provide a consi
 
 4. Open a new VS Code terminal and run:
 
-   ```bash
-   pwd
-   ```
+    ```bash
+    pwd
+    ```
 
-   It should print `/workspaces/journal-starter`.
+    It should print `/workspaces/journal-starter`.
 
 5. If you'd like, take some time now to review how the development container is
    configured. The configuration files are in the `.devcontainer` folder. The
@@ -114,48 +114,48 @@ Time for your first task! You will add a cloud CLI to the development container 
    `.env` file should be ignored by Git. Run the following command to check whether
    your working tree is clean:
 
-   ```bash
-   git status
-   ```
+    ```bash
+    git status
+    ```
 
-   You should see:
+    You should see:
 
-   ```text
-   On branch main
-   Your branch is up to date with 'origin/main'.
+    ```text
+    On branch main
+    Your branch is up to date with 'origin/main'.
 
-   nothing to commit, working tree clean
-   ```
+    nothing to commit, working tree clean
+    ```
 
 2. It's also important to make sure your local `main` branch is up to date with the
    remote `main` branch. First, run the following command to make sure you are on
    the `main` branch:
 
-   ```bash
-   git checkout main
-   ```
+    ```bash
+    git checkout main
+    ```
 
 3. Now run the following command to make sure your local `main` branch is up to date
    with the remote `main` branch:
 
-   ```bash
-   git pull origin main
-   ```
+    ```bash
+    git pull origin main
+    ```
 
 4. Now it's time to create a new branch for your task. Run the following command to
    create a new branch called `setup/cloud-cli` and switch to it:
 
-   ```bash
-   git checkout -b setup/cloud-cli
-   ```
+    ```bash
+    git checkout -b setup/cloud-cli
+    ```
 
 5. Open the `.devcontainer/devcontainer.json` file and uncomment exactly one cloud
    CLI feature. You can choose from Azure, AWS, or GCP. For example, to add the
    Azure CLI, uncomment the following line:
 
-   ```json
-   "ghcr.io/va-h/devcontainers-features/azure-cli": {}
-   ```
+    ```json
+    "ghcr.io/va-h/devcontainers-features/azure-cli": {}
+    ```
 
 6. Because you have changed the development container configuration, you need to
    rebuild the container for the change to take effect. Choose
@@ -164,11 +164,11 @@ Time for your first task! You will add a cloud CLI to the development container 
 7. After the container is rebuilt, open a new VS Code terminal and run the command
    for your chosen cloud CLI to verify that it is installed:
 
-   ```bash
-   az --version
-   # or: aws --version
-   # or: gcloud --version
-   ```
+    ```bash
+    az --version
+    # or: aws --version
+    # or: gcloud --version
+    ```
 
 8. Now that you have verified that the cloud CLI is installed, it's time to review
    your changes. In VS Code, open the Source Control view by clicking the
@@ -237,11 +237,11 @@ Time for your first task! You will add a cloud CLI to the development container 
     when you create your pull request and contains **three jobs**, shown as
     separate checks on the pull request:
 
-    | Job | What it checks | What to review in the job logs |
-    |-----|----------------|--------------------------------|
-    | **Code quality** | Python linting, formatting, and types. | Open **Ruff check**, **Ruff format check**, and **Pyright type check** to see their results. |
-    | **Starter safeguards** | Tests for the starter's existing behavior, excluding unfinished exercises. Runs regardless of the task label. | Open **Run starter safeguards** and review the test names and final pytest summary. |
-    | **Task acceptance** | Reads your PR's task label to select the tests for your current task and any preceding exercises. | Open **Run selected task and preceding exercises** to see the selected label, pytest command, and test results. |
+    | Job                    | What it checks                                                                                                | What to review in the job logs                                                                                  |
+    | ---------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+    | **Code quality**       | Python linting, formatting, and types.                                                                        | Open **Ruff check**, **Ruff format check**, and **Pyright type check** to see their results.                    |
+    | **Starter safeguards** | Tests for the starter's existing behavior, excluding unfinished exercises. Runs regardless of the task label. | Open **Run starter safeguards** and review the test names and final pytest summary.                             |
+    | **Task acceptance**    | Reads your PR's task label to select the tests for your current task and any preceding exercises.             | Open **Run selected task and preceding exercises** to see the selected label, pytest command, and test results. |
 
     In your fork's **Actions** tab, open the latest **CI** run for your pull
     request, then click each job to expand the steps above. For **Task acceptance**,
@@ -280,15 +280,15 @@ Time for your first task! You will add a cloud CLI to the development container 
 
 1. After merging your pull request, switch back to `main`:
 
-   ```bash
-   git checkout main
-   ```
+    ```bash
+    git checkout main
+    ```
 
 2. Pull the merged changes into your local `main` branch:
 
-   ```bash
-   git pull origin main
-   ```
+    ```bash
+    git pull origin main
+    ```
 
 You should now have a running development container with one cloud CLI installed and
 your setup pull request merged into your fork.
