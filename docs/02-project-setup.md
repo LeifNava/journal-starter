@@ -22,6 +22,8 @@ request.
     git clone https://github.com/YOUR_USERNAME/journal-starter.git
     ```
 
+[//]: # "This comment is invisible everywhere"
+
 4. Change into the project directory:
 
     ```bash
